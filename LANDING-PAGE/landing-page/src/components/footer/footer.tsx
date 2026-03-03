@@ -1,0 +1,43 @@
+import { conditions, contactInformation, medias, pages } from "../../common/constants";
+import { ContactItem } from "./contact-item"
+import { FooterListItem } from "./footer-list-item";
+
+export const Footer = () => {
+    return (
+        <footer className="pt-60 pb-15 px-6">
+            <img src="/images/logo.svg" alt="logo" className="mb-10" />
+            <div className="flex flex-col gap-4">
+                {
+                    contactInformation.map((contact) => (
+                        <ContactItem key={contact.alt} {...contact} />
+                    ))
+                }
+            </div>
+            <div className="flex flex-col gap-8 mt-16">
+                <ul>
+                    {
+                        pages.map((page) => (
+                            <FooterListItem key={page} text={page} />
+                        ))
+                    }
+                </ul>
+                <ul>
+                    {
+                        conditions.map((conditions) => (
+                            <FooterListItem key={conditions} text={conditions} />
+                        ))
+                    }
+                </ul>
+                <div className="flex justify-center gap-4">
+                    {
+                        medias.map((media) => (
+                            <div key={media.text} className="hover:text-Teal-200 cursor-pointer border rounded-full size-7.5 p-0.5">
+                                {media.icon}
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </footer>
+    )
+}
