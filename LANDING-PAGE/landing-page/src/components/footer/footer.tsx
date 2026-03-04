@@ -4,16 +4,21 @@ import { FooterListItem } from "./footer-list-item";
 
 export const Footer = () => {
     return (
-        <footer className="pt-60 pb-15 px-6">
+        <footer className="pt-60 pb-40 px-6">
             <img src="/images/logo.svg" alt="logo" className="mb-10" />
-            <div className="flex flex-col gap-4">
-                {
-                    contactInformation.map((contact) => (
-                        <ContactItem key={contact.alt} {...contact} />
-                    ))
-                }
+
+            <div className="flex flex-col gap-4 md:flex-row">
+                <ContactItem styles="flex-1"  {...contactInformation[0]} />
+                <div className="flex flex-col gap-4 flex-1">
+                    {
+                        contactInformation.slice(1, 4).map((contact) => (
+                            <ContactItem key={contact.alt} {...contact} />
+                        ))
+                    }
+                </div>
             </div>
-            <div className="flex flex-col gap-8 mt-16">
+
+            <div className="flex flex-col gap-8 mt-16 md:flex-row md:gap-49">
                 <ul>
                     {
                         pages.map((page) => (
