@@ -1,7 +1,7 @@
 
 export const MoreInformation = () => {
     return (
-        <div className="my-40 md:flex md:items-center md:gap-4">
+        <div className="my-40 md:flex md:items-center md:gap-4 max-w-230 mx-auto">
             <img src="/images/illustration-stay-productive.png" alt="illustration stay productive" className="mb-12 md:w-95" />
 
             <div>
